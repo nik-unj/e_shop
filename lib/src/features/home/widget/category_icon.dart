@@ -1,7 +1,7 @@
+import 'package:e_shop/resources/constant/app_style.dart';
 import 'package:e_shop/src/features/product/controller/product_controller.dart';
 import 'package:e_shop/src/features/product/product_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:e_shop/resources/constant/app_style.dart';
 import 'package:get/get.dart';
 
 class CategoryIcon extends StatelessWidget {
@@ -27,6 +27,7 @@ class CategoryIcon extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: 15,
           right: 5,
+          top: 5,
         ),
         child: Column(
           children: [
@@ -37,7 +38,7 @@ class CategoryIcon extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: AppStyle.grey,
-                    blurRadius: 5,
+                    blurRadius: 2,
                     spreadRadius: 0.8,
                   ),
                 ],

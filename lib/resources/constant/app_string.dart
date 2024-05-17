@@ -1,4 +1,5 @@
 import 'package:e_shop/resources/constant/app_assets.dart';
+import 'package:e_shop/src/features/product/model/product_model.dart';
 
 class AppString {
   static const String eshop = "ESHOP";
@@ -18,6 +19,17 @@ class AppString {
   static const String productDetail = "Product Detail";
   static const String description = "Description";
   static const String addToCart = "Add to Cart";
+  static const String removeFromCart = "Remove from Cart";
+  static const String mycart = "My Cart";
+  static const String showPassword = "Show Password";
+  static const String login = "Login";
+  static const String settingUp = "Setting things up";
+  static const String subTotal = "Subtotal";
+  static const String discount = "Discount";
+  static const String total = "Total";
+  static const String saved = "You Saved";
+  static const String buy = "Proceed to buy";
+  static const String noProduct = "No Product";
 }
 
 class AppConstant {
@@ -85,4 +97,18 @@ class AppConstant {
     AppAssets.ad3,
     AppAssets.ad4
   ];
+
+  static Product dummyProduct = Product(
+    id: 1,
+    title: " iPhone 9",
+    description: "An apple mobile which is nothing like apple",
+    price: 549,
+    discountPercentage: 12.96,
+    rating: 4.69,
+    stock: 94,
+    brand: "Apple",
+    category: "smartphones",
+    thumbnail: "https://cdn.dummyjson.com/product-images/10/2.jpg",
+    images: [],
+  );
 }

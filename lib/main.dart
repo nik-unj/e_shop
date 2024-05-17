@@ -1,4 +1,4 @@
-import 'package:e_shop/src/features/bottom_bar/bottom_bar.dart';
+import 'package:e_shop/src/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const BottomBar(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -9,7 +9,8 @@ class AppStyle {
       const EdgeInsets.symmetric(vertical: 10);
 
   //color
-  static Color primary = const Color.fromARGB(255, 250, 110, 32);
+  static Color primary = const Color.fromARGB(255, 107, 204, 213);
+  static Color secondary = const Color.fromARGB(255, 250, 110, 32);
   static Color background = const Color.fromARGB(255, 255, 242, 235);
   static Color error = const Color(0xffba1a1a);
   static Color grey = const Color(0xff7a757f);
@@ -97,7 +98,7 @@ class AppStyle {
 
   static TextStyle productName() {
     return TextStyle(
-      color: primary,
+      color: black,
       fontSize: 35,
       fontWeight: FontWeight.w700,
       fontFamily: 'Bebas',
@@ -123,7 +124,7 @@ class AppStyle {
 
   static TextStyle productBrand() {
     return TextStyle(
-      color: black,
+      color: primary,
       fontSize: 20,
       fontWeight: FontWeight.w800,
       fontFamily: 'Oswald',
@@ -132,9 +133,26 @@ class AppStyle {
 
   static TextStyle productDiscount() {
     return TextStyle(
-      color: primary,
+      color: secondary,
       fontSize: 30,
       fontWeight: FontWeight.w800,
+      fontFamily: 'Oswald',
+    );
+  }
+
+  static TextStyle cartTitle() {
+    return TextStyle(
+      color: black,
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Concert',
+    );
+  }
+
+  static TextStyle cartQuantity() {
+    return TextStyle(
+      color: black,
+      fontSize: 16,
       fontFamily: 'Oswald',
     );
   }

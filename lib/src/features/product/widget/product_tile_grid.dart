@@ -5,7 +5,7 @@ import 'package:e_shop/src/features/product/model/product_model.dart';
 import 'package:e_shop/src/features/product/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class ProductTileGrid extends StatelessWidget {
   final Product product;
@@ -13,6 +13,9 @@ class ProductTileGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int discountedPrice = ((product.price ?? 0) -
+            ((product.price ?? 0) * (product.discountPercentage ?? 0)) / 100)
+        .toInt();
     return GestureDetector(
       onTap: () {
         Get.to(() => ProductDetailScreen(product: product));
@@ -30,9 +33,7 @@ class ProductTileGrid extends StatelessWidget {
                   height: 250,
                   fit: BoxFit.fill,
                   imageUrl: product.thumbnail ?? '',
-                  placeholder: (context, url) => Shimmer.fromColors(
-                    baseColor: AppStyle.grey,
-                    highlightColor: AppStyle.grey,
+                  placeholder: (context, url) => Skeletonizer(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Image.asset(
@@ -56,10 +57,24 @@ class ProductTileGrid extends StatelessWidget {
             ),
             Padding(
               padding: AppStyle.smallEdgeInsets.copyWith(top: 0, bottom: 0),
-              child: Text(
-                "\$ ${product.price.toString()}",
-                style: AppStyle.priceStyle(),
-                maxLines: 1,
+              child: Row(
+                children: [
+                  Text(
+                    "\$${product.price}",
+                    style: AppStyle.priceStyle().copyWith(
+                      color: AppStyle.secondary,
+                      decoration: TextDecoration.lineThrough,
+                      decorationColor: AppStyle.grey,
+                    ),
+                    maxLines: 1,
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    "\$$discountedPrice",
+                    style: AppStyle.priceStyle(),
+                    maxLines: 1,
+                  ),
+                ],
               ),
             ),
           ],

@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:formz/formz.dart';
-import 'package:get/get.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-
 import 'package:e_shop/resources/constant/app_string.dart';
 import 'package:e_shop/resources/constant/app_style.dart';
+import 'package:e_shop/resources/constant/global.dart';
 import 'package:e_shop/resources/utils/image_slider.dart';
 import 'package:e_shop/resources/utils/search_bar.dart';
 import 'package:e_shop/src/features/home/controller/home_controller.dart';
 import 'package:e_shop/src/features/home/widget/category_icon.dart';
-import 'package:e_shop/src/features/home/widget/product_tile_grid.dart';
+import 'package:e_shop/src/features/product/widget/product_tile_grid.dart';
+import 'package:flutter/material.dart';
+import 'package:formz/formz.dart';
+import 'package:get/get.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: AppStyle.normalText().copyWith(color: AppStyle.white),
             ),
             Text(
-              "Name",
+              '$name',
               style: AppStyle.headingOrange().copyWith(color: AppStyle.white),
             ),
           ],
@@ -217,7 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index) {
               return ProductTileGrid(
                 product: isDummy
-                    ? homeController.dummyProduct
+                    ? AppConstant.dummyProduct
                     : homeController.newProductsList[index],
               );
             },

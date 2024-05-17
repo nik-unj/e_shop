@@ -1,5 +1,8 @@
 class AppAssets {
   static const String retryImage = "assets/images/retry.png";
+  static const String errorImage = "assets/icons/error.jpg";
+  static const String splashImage = "assets/images/splash.jpg";
+  static const String loginImage = "assets/images/login.jpg";
   static const String ad1 = "assets/images/ad_1.jpg";
   static const String ad2 = "assets/images/ad_2.jpg";
   static const String ad3 = "assets/images/ad_3.jpg";
